@@ -1,0 +1,13 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.card__title {
+    font-weight: 700;
+    color: var(--news-secondary-color);
+}
+.subtext {
+    font-size: 12px;
+    color: var(--news-subtext-color);
+}

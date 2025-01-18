@@ -1,0 +1,21 @@
+.list {
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    gap: 8px;
+}
+.list::-webkit-scrollbar {
+    width: 0;
+}
+.button {
+    padding: 8px 25px;
+    border-radius: 20px;
+    background-color: var(--news-background-color);
+    font-size: 1em;
+    color: var(--news-main-color);
+    transition: all 0.3s ease;
+}
+.button:hover {
+    color: var(--news-secondary-color);
+    background-color: var(--news-active-color);
+}

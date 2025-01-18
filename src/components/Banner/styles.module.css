@@ -1,0 +1,72 @@
+.container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    border-radius: 20px;
+}
+.image {
+    width: 100%;
+    object-fit: cover;
+}
+.bubble_top, .bubble_bottom {
+    height: 56px;
+    position: absolute;
+    background-color: var(--news-main-color);
+    transition: background-color 0.3s ease;
+}
+.bubble_top {
+    width: 450px;
+    top: 0;
+    left: 0;
+    display: flex;
+    gap: 10px;
+    border-bottom-right-radius: 20px;
+}
+.bubble_top:after {
+    content: "";
+    position: absolute;
+    width: 56px;
+    height: 28px;
+    top: 0;
+    right: -56px;
+    border-top-left-radius: 20px;
+    box-shadow: -20px 0 0 0 var(--news-main-color);
+}
+.bubble_top:before {
+    content: "";
+    position: absolute;
+    width: 56px;
+    height: 28px;
+    bottom: -28px;
+    left: 0;
+    border-top-left-radius: 20px;
+    box-shadow: -20px 0 0 0 var(--news-main-color);
+}
+.bubble_bottom {
+    width: 350px;
+    padding: 10px 0 0 10px;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 20px;
+}
+.bubble_bottom:after {
+    content: "";
+    position: absolute;
+    width: 56px;
+    height: 28px;
+    bottom: 0;
+    left: -56px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 20px 0 0 0 var(--news-main-color);
+}
+.bubble_bottom:before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 56px;
+    top: -56px;
+    right: 0;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 20px 0 0 var(--news-main-color);
+}
+
