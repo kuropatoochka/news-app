@@ -3,7 +3,8 @@ import { Carousel } from '../Carousel/Carousel.jsx'
 import LastNewsButton from "../LastNewsButton/LastNewsButton.jsx"
 import SearchInput from "../SearchInput/SearchInput.jsx";
 import ThemeButton from "../ThemeButton/ThemeButton.jsx";
-function Banner({ news }) {
+import Skeleton from "../Skeleton/Skeleton.jsx";
+function Banner({ news, isLoading }) {
   const getTopImages = (news) => {
     return news.reduce((result, item) => {
       if (result.length < 3 && item.image !== 'None') {
@@ -22,7 +23,7 @@ function Banner({ news }) {
 
   return (
     <div className={styles.container}>
-      <Carousel>{getTopImages(news)}</Carousel>
+      {(news.length > 0 && !isLoading) ? <Carousel>{getTopImages(news)}</Carousel> : <Skeleton count={1} type={'banner'}/>}
       <span className={styles.bubble_top}>
         <ThemeButton />
         <SearchInput />

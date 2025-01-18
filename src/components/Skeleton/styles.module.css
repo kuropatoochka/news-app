@@ -1,0 +1,25 @@
+.banner {
+    height: 500px;
+}
+.item {
+    display: inline-block;
+    height: 200px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+.banner, .item {
+    width: 100%;
+    border-radius: 20px;
+    background: linear-gradient(-90deg, #9ba0a1 0%, #d1d3d7 40%, #d1d3d7 60%, #9ba0a1 100%);
+    background-size: 400% 400%;
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -135% 0;
+    }
+}
