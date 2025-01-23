@@ -1,0 +1,29 @@
+.container {
+    width: min-content;
+    padding: 3px;
+    display: flex;
+    gap: 10px;
+    border-radius: 25px;
+    background-color: #f3f3f3;
+}
+.list {
+    display: flex;
+    gap: 10px;
+}
+.item:disabled, .arrow:disabled {
+    cursor: default;
+}
+.item {
+    padding: 3px 10px;
+}
+.arrow {
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+}
+.leftArrow {
+    rotate: 270deg;
+}
+.rightArrow {
+    rotate: 90deg;
+}

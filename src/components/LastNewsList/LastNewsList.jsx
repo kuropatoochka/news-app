@@ -1,5 +1,5 @@
-import styles from './styles.module.css'
 import MiniCard from "../MiniCard/MiniCard.jsx"
+import styles from './styles.module.css'
 
 function LastNewsList({ news }) {
   return (
