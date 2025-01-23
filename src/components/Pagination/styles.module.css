@@ -1,0 +1,34 @@
+.container {
+    width: min-content;
+    padding: 3px;
+    display: flex;
+    gap: 10px;
+    border-radius: 25px;
+    background-color: #f3f3f3;
+}
+.list {
+    display: flex;
+    gap: 10px;
+}
+.item:disabled, .arrow:disabled {
+    cursor: default;
+}
+.item {
+    padding: 3px 10px;
+}
+.item:disabled {
+    background-color: var(--news-active-color);
+    border-radius: 13px;
+    color: var(--news-main-color);
+}
+.arrow {
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+}
+.leftArrow {
+    rotate: 270deg;
+}
+.rightArrow {
+    rotate: 90deg;
+}
