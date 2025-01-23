@@ -1,21 +1,30 @@
 .list {
     display: flex;
     overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
     gap: 8px;
 }
-.list::-webkit-scrollbar {
-    width: 0;
-}
-.button {
+.item, .active {
     padding: 8px 25px;
     border-radius: 20px;
-    background-color: var(--news-background-color);
     font-size: 1em;
-    color: var(--news-main-color);
     transition: all 0.3s ease;
 }
-.button:hover {
+.item {
+    color: var(--news-main-color);
+    background-color: var(--news-background-color);
+}
+.item:hover {
     color: var(--news-secondary-color);
     background-color: var(--news-active-color);
+}
+.active {
+    color: var(--news-secondary-color);
+    background-color: var(--news-active-color);
+}
+
+::-webkit-scrollbar {
+    scrollbar-width: none;
 }
