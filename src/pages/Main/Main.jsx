@@ -10,6 +10,7 @@ import styles from './styles.module.css'
 const Main = () => {
   const [news, setNews] = useState([])
   const [categories, setCategories] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState("all")
   const [isLoading, setIsLoading] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = 10
@@ -18,7 +19,11 @@ const Main = () => {
   const fetchNews = async (currentPage) => {
     try {
       setIsLoading(true)
-      const response = await getNews(currentPage, pageSize)
+      const response = await getNews({
+        page_number: currentPage,
+        page_size: pageSize,
+        category: selectedCategory === "all" ? null : selectedCategory
+      })
       setNews(response.news)
       setIsLoading(false)
     } catch (error) {
@@ -28,17 +33,18 @@ const Main = () => {
 
   useEffect(() => {
     fetchNews(currentPage)
-  }, [currentPage])
+  }, [currentPage, selectedCategory])
+
+  const fetchCategory = async () => {
+    try {
+      const response = await getCategory()
+      setCategories(["all", ...response.categories])
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
-    const fetchCategory = async () => {
-      try {
-        const response = await getCategory()
-        setCategories(response.categories)
-      } catch (error) {
-        console.log(error)
-      }
-    }
     fetchCategory()
   }, [])
   
@@ -56,7 +62,7 @@ const Main = () => {
     <main className={styles.main}>
       <Banner news={news} isLoading={isLoading}/>
       <div className={styles.main__news}>
-        <CategoryList categories={categories}/>
+        <CategoryList categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
         <LastNewsList news={news}/>
         <div>
           <NewsList news={news} isLoading={isLoading}/>

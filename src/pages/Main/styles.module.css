@@ -7,6 +7,6 @@
 .main__news {
     display: grid;
     grid-template-columns: auto 340px;
-    grid-template-rows: 58px auto;
+    grid-template-rows: 40px auto;
     gap: 10px;
 }
