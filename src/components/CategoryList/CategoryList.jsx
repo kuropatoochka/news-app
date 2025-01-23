@@ -1,12 +1,16 @@
 import styles from './styles.module.css'
 
-function CategoryList({ categories }) {
+function CategoryList({ categories, setSelectedCategory, selectedCategory }) {
   return (
-    <section className={styles.list}>
-      {categories.map(category => (
-        <button className={styles.button} key={category}>{category}</button>
-      ))}
-    </section>
+    <div className={styles.list}>
+      {categories.map(category => {
+        return (
+          <button
+            onClick={() => setSelectedCategory(category)}
+            className={selectedCategory === category ? styles.active : styles.item} key={category}>{category}</button>
+        )
+      })}
+    </div>
   )
 }
 
