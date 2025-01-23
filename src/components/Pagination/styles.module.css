@@ -16,6 +16,11 @@
 .item {
     padding: 3px 10px;
 }
+.item:disabled {
+    background-color: var(--news-active-color);
+    border-radius: 13px;
+    color: var(--news-main-color);
+}
 .arrow {
     padding: 3px 10px;
     display: flex;
