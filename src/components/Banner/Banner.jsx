@@ -4,7 +4,7 @@ import LastNewsButton from "../LastNewsButton/LastNewsButton.jsx"
 import SearchInput from "../SearchInput/SearchInput.jsx";
 import ThemeButton from "../ThemeButton/ThemeButton.jsx";
 import Skeleton from "../Skeleton/Skeleton.jsx";
-function Banner({ news, isLoading }) {
+function Banner({ news, isLoading, keywords, setKeywords }) {
   const getTopImages = (news) => {
     return news.reduce((result, item) => {
       if (result.length < 3 && item.image !== 'None') {
@@ -26,7 +26,7 @@ function Banner({ news, isLoading }) {
       {(news.length > 0 && !isLoading) ? <Carousel>{getTopImages(news)}</Carousel> : <Skeleton count={1} type={'banner'}/>}
       <span className={styles.bubble_top}>
         <ThemeButton />
-        <SearchInput />
+        <SearchInput keywords={keywords} setKeywords={setKeywords}/>
       </span>
       <span className={styles.bubble_bottom}><LastNewsButton /></span>
     </div>
