@@ -1,9 +1,14 @@
 import styles from './styles.module.css'
 
-function SearchInput() {
+function SearchInput({keywords, setKeywords}) {
   return (
     <div className={styles.search_input}>
-      <input className={styles.input} type="text" placeholder="Search news..."/>
+      <input
+        className={styles.input}
+        type="text"
+        placeholder="Search news..."
+        value={keywords}
+        onChange={(e) => setKeywords(e.target.value)}/>
       <button className={styles.button}>
         <svg className={styles.button_img} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
           <path fillRule="evenodd"

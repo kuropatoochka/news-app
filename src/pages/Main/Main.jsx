@@ -6,15 +6,19 @@ import LastNewsList from "../../components/LastNewsList/LastNewsList.jsx"
 import CategoryList from "../../components/CategoryList/CategoryList.jsx"
 import Pagination from "../../components/Pagination/Pagination.jsx"
 import styles from './styles.module.css'
+import {useDebounce} from "../../hooks/useDebounce.js";
 
 const Main = () => {
   const [news, setNews] = useState([])
   const [categories, setCategories] = useState([])
   const [selectedCategory, setSelectedCategory] = useState("all")
+  const [keywords, setKeywords] = useState('')
   const [isLoading, setIsLoading] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
   const totalPages = 10
   const pageSize = 15
+
+  const debouncedKeywords = useDebounce(keywords, 1500)
 
   const fetchNews = async (currentPage) => {
     try {
@@ -22,7 +26,8 @@ const Main = () => {
       const response = await getNews({
         page_number: currentPage,
         page_size: pageSize,
-        category: selectedCategory === "all" ? null : selectedCategory
+        category: selectedCategory === "all" ? null : selectedCategory,
+        keywords: debouncedKeywords
       })
       setNews(response.news)
       setIsLoading(false)
@@ -33,7 +38,7 @@ const Main = () => {
 
   useEffect(() => {
     fetchNews(currentPage)
-  }, [currentPage, selectedCategory])
+  }, [currentPage, selectedCategory, debouncedKeywords])
 
   const fetchCategory = async () => {
     try {
@@ -60,11 +65,18 @@ const Main = () => {
 
   return (
     <main className={styles.main}>
-      <Banner news={news} isLoading={isLoading}/>
+      <Banner news={news} isLoading={isLoading} keywords={keywords} setKeywords={setKeywords}/>
       <div className={styles.main__news}>
         <CategoryList categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
         <LastNewsList news={news}/>
-        <div>
+        <div >
+          <Pagination
+            handleNextPage={handleNextPage}
+            handlePreviousPage={handlePreviousPage}
+            handlePageClick={handlePageClick}
+            currentPage = {currentPage}
+            totalPages={totalPages}
+          />
           <NewsList news={news} isLoading={isLoading}/>
           <Pagination
             handleNextPage={handleNextPage}
