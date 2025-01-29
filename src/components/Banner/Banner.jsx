@@ -1,12 +1,12 @@
 import styles from './styles.module.css'
-import { Carousel } from '../Carousel/Carousel.jsx'
+import Carousel from '../Carousel/Carousel.jsx'
 import LastNewsButton from "../LastNewsButton/LastNewsButton.jsx"
 import SearchInput from "../SearchInput/SearchInput.jsx";
 import ThemeButton from "../ThemeButton/ThemeButton.jsx";
-import Skeleton from "../Skeleton/Skeleton.jsx";
+
 function Banner({ news, isLoading, keywords, setKeywords }) {
   const getTopImages = (news) => {
-    return news.reduce((result, item) => {
+    const topNews =  news.reduce((result, item) => {
       if (result.length < 3 && item.image !== 'None') {
         result.push(
           <img
@@ -19,16 +19,19 @@ function Banner({ news, isLoading, keywords, setKeywords }) {
       }
       return result
     }, [])
+    return topNews
   }
 
   return (
     <div className={styles.container}>
-      {(news.length > 0 && !isLoading) ? <Carousel>{getTopImages(news)}</Carousel> : <Skeleton count={1} type={'banner'}/>}
+      <Carousel isLoading={isLoading}>{getTopImages(news)}</Carousel>
       <span className={styles.bubble_top}>
         <ThemeButton />
         <SearchInput keywords={keywords} setKeywords={setKeywords}/>
       </span>
-      <span className={styles.bubble_bottom}><LastNewsButton /></span>
+      <span className={styles.bubble_bottom}>
+        <LastNewsButton />
+      </span>
     </div>
   )
 }
