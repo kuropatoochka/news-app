@@ -1,9 +1,10 @@
 import {Children, cloneElement, useEffect, useState} from "react";
 import arrow from '../../assets/chevronUp.svg';
 import styles from './styles.module.css';
+import withSkeleton from "../../helpers/hocs/withSkeleton.jsx";
 
 const PAGE_HEIGHT = 500;
-export const Carousel = ({ children }) => {
+const Carousel = ({ children }) => {
   const [pages, setPages] = useState([]);
   const [offset, setOffset] = useState(0);
   const handleUpClick = () => {
@@ -45,3 +46,7 @@ export const Carousel = ({ children }) => {
     </div>
   )
 }
+
+const CarouselWithSkeleton = withSkeleton(Carousel, 'banner', 1)
+
+export default CarouselWithSkeleton

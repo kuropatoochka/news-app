@@ -1,17 +1,18 @@
 import BigCard from "../BigCard/BigCard.jsx"
-import Skeleton from "../Skeleton/Skeleton.jsx"
+import withSkeleton from "../../helpers/hocs/withSkeleton.jsx"
 import styles from './styles.module.css'
 
-function NewsList({ news, isLoading }) {
+function NewsList({ news }) {
   return (
     <section className={styles.container}>
-      {(!isLoading)
-        ? news.map(item => (
+      {news.map(item => (
           <BigCard key={item.id} item={item}/>
-        ))
-        : <Skeleton count={15} type={'item'}/>}
+        ))}
     </section>
   )
 }
 
-export default NewsList
+const NewsListWithSkeleton = withSkeleton(NewsList, 'item', 10)
+
+
+export default NewsListWithSkeleton
