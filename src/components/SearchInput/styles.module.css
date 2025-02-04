@@ -33,3 +33,9 @@ input::placeholder {
 .button_img path {
     fill: var(--news-main-color);
 }
+
+@media (max-width: 770px) {
+    .search_input {
+        display: none;
+    }
+}

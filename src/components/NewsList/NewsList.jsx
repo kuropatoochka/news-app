@@ -1,6 +1,6 @@
+import styles from './styles.module.css'
 import BigCard from "../BigCard/BigCard.jsx"
 import withSkeleton from "../../helpers/hocs/withSkeleton.jsx"
-import styles from './styles.module.css'
 
 function NewsList({ news }) {
   return (

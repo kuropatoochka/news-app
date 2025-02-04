@@ -6,3 +6,18 @@
     border-radius: 20px;
     background-color: var(--news-secondary-color);
 }
+.icon {
+    width: 24px;
+}
+
+@media (max-width: 770px) {
+    .theme_button {
+        height: 32px;
+        padding: 8px;
+        gap: 12px;
+        z-index: 1;
+    }
+    .icon {
+        width: 16px;
+    }
+}

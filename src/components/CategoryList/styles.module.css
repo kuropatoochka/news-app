@@ -1,8 +1,6 @@
 .list {
     display: flex;
-    overflow: hidden;
     overflow-x: auto;
-    white-space: nowrap;
     scrollbar-width: none;
     gap: 8px;
 }
@@ -13,18 +11,17 @@
     transition: all 0.3s ease;
 }
 .item {
-    color: var(--news-main-color);
+    color: #fafafa;
     background-color: var(--news-background-color);
 }
-.item:hover {
-    color: var(--news-secondary-color);
-    background-color: var(--news-active-color);
-}
-.active {
+.item:hover, .active {
     color: var(--news-secondary-color);
     background-color: var(--news-active-color);
 }
 
-::-webkit-scrollbar {
-    scrollbar-width: none;
+@media (max-width: 770px) {
+    .item, .active {
+        padding: 5px 15px;
+        font-size: 0.87em;
+    }
 }
