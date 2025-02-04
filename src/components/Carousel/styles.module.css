@@ -3,13 +3,13 @@
     height: 500px;
     position: relative;
 }
-.container__window {
+.window {
     width: 100%;
     height: 100%;
     overflow: hidden;
     border-radius: 20px;
 }
-.container__items {
+.list {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease-in-out;
@@ -18,16 +18,25 @@
     position: absolute;
     top: 221px;
     right: 15px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 10px;
-}
-.arrowUp, .arrowDown {
-    width: 24px;
-    cursor: pointer;
+    border-radius: 20px;
+    background-color: rgba(250, 250, 250, 0.5);
 }
 .arrowDown {
     rotate: 180deg;
+}
+.arrowUp, .arrowDown {
+    width: 20px;
+}
+
+@media (max-width: 770px) {
+    .container {
+        height: 200px;
+    }
+    .toggle_buttons {
+        top: 70px;
+    }
 }

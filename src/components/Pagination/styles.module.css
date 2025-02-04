@@ -4,22 +4,23 @@
     display: flex;
     gap: 10px;
     border-radius: 25px;
-    background-color: #f3f3f3;
+    background-color: var(--news-pagination-color);
 }
 .list {
     display: flex;
-    gap: 10px;
+    gap: 8px;
+}
+.item {
+    padding: 3px 10px;
+    color: var(--news-secondary-color);
 }
 .item:disabled, .arrow:disabled {
     cursor: default;
 }
-.item {
-    padding: 3px 10px;
-}
 .item:disabled {
-    background-color: var(--news-active-color);
     border-radius: 13px;
     color: var(--news-main-color);
+    background-color: var(--news-active-color);
 }
 .arrow {
     padding: 3px 10px;
@@ -31,4 +32,10 @@
 }
 .rightArrow {
     rotate: 90deg;
+}
+
+@media (max-width: 770px) {
+    .container {
+        display: none;
+    }
 }

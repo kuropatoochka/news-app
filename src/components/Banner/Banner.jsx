@@ -1,8 +1,8 @@
 import styles from './styles.module.css'
 import Carousel from '../Carousel/Carousel.jsx'
 import LastNewsButton from "../LastNewsButton/LastNewsButton.jsx"
-import SearchInput from "../SearchInput/SearchInput.jsx";
-import ThemeButton from "../ThemeButton/ThemeButton.jsx";
+import SearchInput from "../SearchInput/SearchInput.jsx"
+import ThemeButton from "../ThemeButton/ThemeButton.jsx"
 
 function Banner({ news, isLoading, keywords, setKeywords }) {
   const getTopImages = (news) => {

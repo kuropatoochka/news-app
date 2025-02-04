@@ -4,9 +4,32 @@
     flex-direction: column;
     gap: 25px;
 }
-.main__news {
+.main__container {
+    width: 100%;
     display: grid;
     grid-template-columns: auto 340px;
-    grid-template-rows: 40px auto;
+    grid-template-rows: auto;
     gap: 10px;
+}
+.main__news {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+    .main__container {
+        grid-template-columns: auto 240px;
+    }
+}
+
+@media (max-width: 770px) {
+    .main {
+        gap: 15px;
+    }
+    .main__container {
+        grid-template-columns: 1fr;
+    }
 }
