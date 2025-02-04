@@ -1,3 +1,4 @@
+import styles from './styles.module.css'
 import {getCategory, getNews} from "../../api/apiNews.js"
 import NewsList from "../../components/NewsList/NewsList.jsx"
 import Banner from "../../components/Banner/Banner.jsx"
@@ -8,7 +9,6 @@ import {useDebounce} from "../../helpers/hooks/useDebounce.js"
 import {useFetch} from "../../helpers/hooks/useFetch.js"
 import {useFilters} from "../../helpers/hooks/useFilters.js"
 import {PAGE_SIZE, TOTAL_PAGES} from "../../constants/constants.js"
-import styles from './styles.module.css'
 
 const Main = () => {
   const {filters, changeFilter} = useFilters({
@@ -38,21 +38,25 @@ const Main = () => {
 
   return (
     <main className={styles.main}>
-      {data ? <Banner news={data.news} isLoading={isLoading} keywords={filters.keywords} setKeywords={(keywords) => {
-        changeFilter('keywords', keywords)
-      }}/> : null}
-      <div className={styles.main__news}>
-        {dataCategories ? (
-          <CategoryList
-            categories={dataCategories.categories}
-            selectedCategory={filters.category}
-            setSelectedCategory={(category) => {
-              changeFilter('category', category)
-            }}
-          />
-        ) : null}
-        {data ? <LastNewsList news={data.news}/> : null}
-        <div >
+      {data ?
+        <Banner
+          news={data.news}
+          isLoading={isLoading}
+          keywords={filters.keywords}
+          setKeywords={keywords => changeFilter('keywords', keywords)}
+        />
+        : null}
+      <div className={styles.main__container}>
+        <div className={styles.main__news}>
+          {dataCategories ? (
+            <CategoryList
+              categories={dataCategories.categories}
+              selectedCategory={filters.category}
+              setSelectedCategory={(category) => {
+                changeFilter('category', category)
+              }}
+            />
+          ) : null}
           <Pagination
             handleNextPage={handleNextPage}
             handlePreviousPage={handlePreviousPage}
@@ -69,6 +73,7 @@ const Main = () => {
             totalPages={TOTAL_PAGES}
           />
         </div>
+        {data ? <LastNewsList news={data.news}/> : null}
       </div>
     </main>
   )
