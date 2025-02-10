@@ -11,7 +11,7 @@ function ThemeButton() {
   return (
     <button className={styles.theme_button} onClick={toggleTheme}>
       <img className={styles.icon} src={isDarkMode ? darkSun : lightSun} alt="sun"/>
-      <img className={styles.icon} src={isDarkMode ? lightMoon : darkMoon} alt="sun"/>
+      <img className={styles.icon} src={isDarkMode ? lightMoon : darkMoon} alt="moon"/>
     </button>
   )
 }
