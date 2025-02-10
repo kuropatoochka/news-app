@@ -34,8 +34,10 @@ body {
   transition: background-color 0.3s ease;
 }
 h1 {
-  font-size: 3.2em;
+  font-size: 1.5em;
   line-height: 1.1;
+  font-weight: 700;
+  color: var(--news-pagination-color);
 }
 h2 {
   font-size: 1.25em;
@@ -43,8 +45,7 @@ h2 {
   color: var(--news-main-color);
 }
 h3 {
-  font-size: 1.25em;
-  line-height: 1.1;
+  font-size: 1em;
   font-weight: 600;
   color: var(--news-main-color);
 }
@@ -71,6 +72,10 @@ img {
 @media (max-width: 770px) {
   body {
     padding: 15px 20px;
+  }
+  h1 {
+    font-size: 1em;
+    font-weight: 600;
   }
   h3 {
     font-size: 1em;
