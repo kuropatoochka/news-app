@@ -1,37 +1,23 @@
 .search_input {
+    position: absolute;
     width: 340px;
-    height: 46px;
-    padding-left: 21px;
+    height: 38px;
+    padding-left: 20px;
     display: flex;
     align-items: center;
-    border-radius: 20px 20px 10px;
+    border-radius: 10px 20px 20px;
+    color: var(--news-main-color);
     background-color: var(--news-secondary-color);
     z-index: 1;
-}
-.input {
-    width: 100%;
-    height: 100%;
-    color: var(--news-main-color);
 }
 input::placeholder {
     color: var(--news-main-color);
 }
-.button {
-    height: 100%;
-    padding: 0 13px;
-    display: flex;
-    align-items: center;
-    border-radius: 20px 20px 10px;
-    transition: background-color 0.3s ease;
-}
-.button:hover {
-    background-color: var(--news-active-color);
-}
-.button_img {
-    width: 24px;
-}
-.button_img path {
-    fill: var(--news-main-color);
+
+@media (max-width: 1000px) {
+    .search_input {
+        width: 240px;
+    }
 }
 
 @media (max-width: 770px) {

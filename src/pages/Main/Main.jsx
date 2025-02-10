@@ -38,14 +38,7 @@ const Main = () => {
 
   return (
     <main className={styles.main}>
-      {data ?
-        <Banner
-          news={data.news}
-          isLoading={isLoading}
-          keywords={filters.keywords}
-          setKeywords={keywords => changeFilter('keywords', keywords)}
-        />
-        : null}
+      <Banner keywords={filters.keywords} setKeywords={keywords => changeFilter('keywords', keywords)} />
       <div className={styles.main__container}>
         <div className={styles.main__news}>
           {dataCategories ? (
