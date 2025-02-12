@@ -2,7 +2,6 @@
     position: relative;
     width: 100%;
     height: 500px;
-    border-radius: 20px;
 }
 .date {
     width: 250px;
@@ -15,14 +14,21 @@
     transition: background-color 0.3s ease;
     z-index: 1;
 }
-.bubble_top, .bubble_bottom {
+.bubble_top,
+.bubble_top:after,
+.bubble_top:before,
+.bubble_bottom,
+.bubble_bottom:after,
+.bubble_bottom:before {
     position: absolute;
+}
+.bubble_top, .bubble_bottom {
+    width: 350px;
     height: 48px;
     background-color: var(--news-main-color);
     transition: background-color 0.3s ease;
 }
 .bubble_top {
-    width: 352px;
     top: 0;
     left: 0;
     padding-bottom: 10px;
@@ -32,7 +38,6 @@
 }
 .bubble_top:after {
     content: "";
-    position: absolute;
     width: 56px;
     height: 28px;
     top: 0;
@@ -42,7 +47,6 @@
 }
 .bubble_top:before {
     content: "";
-    position: absolute;
     width: 56px;
     height: 28px;
     bottom: -28px;
@@ -51,7 +55,6 @@
     box-shadow: -20px 0 0 0 var(--news-main-color);
 }
 .bubble_bottom {
-    width: 350px;
     padding: 10px;
     bottom: 0;
     right: 0;
@@ -59,7 +62,6 @@
 }
 .bubble_bottom:after {
     content: "";
-    position: absolute;
     width: 56px;
     height: 28px;
     bottom: 0;
@@ -69,7 +71,6 @@
 }
 .bubble_bottom:before {
     content: "";
-    position: absolute;
     width: 28px;
     height: 56px;
     top: -56px;
@@ -88,7 +89,7 @@
     .banner {
         height: 200px;
     }
-    .date {
+    .date, .bubble_bottom {
         display: none;
     }
     .bubble_top {
@@ -97,9 +98,6 @@
     }
     .bubble_top:after {
         height: 21px;
-    }
-    .bubble_bottom {
-        display: none;
     }
 }
 
