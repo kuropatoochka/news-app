@@ -1,4 +1,4 @@
-import Main from "./pages/Main/Main.jsx";
+import Main from "./pages/Main/Main.jsx"
 
 function App() {
   return (

@@ -1,21 +1,18 @@
-.list {
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: none;
-    gap: 8px;
-}
 .item, .active {
-    padding: 8px 25px;
+    margin: 4px;
+    padding: 5px 20px;
     border-radius: 20px;
-    font-size: 1em;
+    font-size: 0.87em;
     transition: all 0.3s ease;
 }
 .item {
+    color: var(--news-secondary-color);
+    background-color: var(--news-pagination-color);
+}
+.active {
     color: #fafafa;
-    background-color: var(--news-background-color);
 }
 .item:hover, .active {
-    color: var(--news-secondary-color);
     background-color: var(--news-active-color);
 }
 

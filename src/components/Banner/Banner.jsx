@@ -1,12 +1,11 @@
 import styles from './styles.module.css'
-import SearchInput from "../SearchInput/SearchInput.jsx"
 import ThemeButton from "../ThemeButton/ThemeButton.jsx"
 import {useFetch} from "../../helpers/hooks/useFetch.js"
 import {getLatestNews} from "../../api/apiNews.js"
 import LatestNewsList from "../LatestNewsList/LatestNewsList.jsx"
 import {formatDate} from "../../helpers/formatDate.js"
 
-const Banner = ({ keywords, setKeywords }) => {
+const Banner = () => {
   const { data, isLoading } = useFetch(getLatestNews)
 
   return (
@@ -16,9 +15,7 @@ const Banner = ({ keywords, setKeywords }) => {
         <ThemeButton />
         <h3 className={styles.date}>{formatDate(new Date())}</h3>
       </span>
-      <span className={styles.bubble_bottom}>
-        <SearchInput keywords={keywords} setKeywords={setKeywords}/>
-      </span>
+      <span className={styles.bubble_bottom}></span>
     </div>
   )
 }

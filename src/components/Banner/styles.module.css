@@ -1,10 +1,10 @@
 .banner {
     position: relative;
-    width: 100%;
     height: 500px;
+    grid-column: span 2;
 }
 .date {
-    width: 250px;
+    width: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,7 @@
     position: absolute;
 }
 .bubble_top, .bubble_bottom {
-    width: 350px;
+    width: 360px;
     height: 48px;
     background-color: var(--news-main-color);
     transition: background-color 0.3s ease;
@@ -88,6 +88,7 @@
 @media (max-width: 770px) {
     .banner {
         height: 200px;
+        grid-column: auto;
     }
     .date, .bubble_bottom {
         display: none;

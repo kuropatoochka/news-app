@@ -1,17 +1,17 @@
-.container {
+.news_cards {
     grid-row-start: 2;
     column-count: 2;
     column-gap: 20px;
 }
 
 @media (min-width: 1400px) {
-    .container {
+    .news_cards {
         column-count: 3;
     }
 }
 
 @media (max-width: 600px) {
-    .container {
+    .news_cards {
         column-count: 1;
     }
 }
