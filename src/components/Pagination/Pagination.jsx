@@ -7,7 +7,7 @@ const Pagination = ({ totalPages, handleNextPage, handlePreviousPage, handlePage
   const {isDarkMode} = useTheme()
 
   return (
-    <div className={styles.container}>
+    <div className={styles.pagination}>
       <button
         className={styles.arrow}
         onClick={handlePreviousPage}

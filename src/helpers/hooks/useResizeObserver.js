@@ -7,7 +7,7 @@ export const useResizeObserver = (ref) => {
     const updateInfoWidth = () => {
       if (ref.current) {
         const itemWidth = ref.current.offsetWidth
-        setInfoWidth(Math.max(itemWidth - ((itemWidth > 900) ? 370 : (itemWidth > 670) ? 270 : 56), 0))
+        setInfoWidth(Math.max(itemWidth - ((itemWidth > 900) ? 380 : (itemWidth > 670) ? 270 : 56), 0))
       }
     }
 

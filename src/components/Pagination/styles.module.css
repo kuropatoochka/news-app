@@ -1,4 +1,4 @@
-.container {
+.pagination {
     width: min-content;
     padding: 3px;
     display: flex;
@@ -32,10 +32,4 @@
 }
 .rightArrow {
     rotate: 90deg;
-}
-
-@media (max-width: 770px) {
-    .container {
-        display: none;
-    }
 }

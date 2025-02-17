@@ -1,0 +1,11 @@
+.news_section {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    gap: 20px;
+}
+
+.news_wrapper {
+    overflow-y: auto;
+    scrollbar-width: none;
+}
