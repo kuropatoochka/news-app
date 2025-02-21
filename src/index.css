@@ -27,7 +27,6 @@
 body {
   width: 100%;
   min-width: 320px;
-  min-height: 100vh;
   margin: 0 auto;
   padding: 30px 50px;
   background-color: var(--news-main-color);
