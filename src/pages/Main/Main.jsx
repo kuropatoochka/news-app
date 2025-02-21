@@ -11,6 +11,7 @@ const Main = () => {
     page_number: 1,
     page_size: PAGE_SIZE,
     category: null,
+    region: null,
     keywords: ''
   })
   const debouncedKeywords = useDebounce(filters.keywords, 1500)
@@ -29,6 +30,10 @@ const Main = () => {
         setKeywords={keywords => changeFilter('keywords', keywords)}
         selectedCategory={filters.category}
         setSelectedCategory={(category) => changeFilter('category', category)}
+        selectedRegion={filters.region}
+        setSelectedRegion={(region) => {
+          changeFilter('region', region)
+        }}
       />
     </main>
 )

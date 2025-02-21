@@ -16,7 +16,7 @@ function NewsList({ news, setSelectedCategory }) {
   )
 }
 
-const NewsListWithSkeleton = withSkeleton(NewsList, 'item', 10)
+const NewsListWithSkeleton = withSkeleton(NewsList, 'item', 7)
 
 
 export default NewsListWithSkeleton
