@@ -1,22 +1,20 @@
 import styles from './styles.module.css'
-import CategoryList from "../CategoryList/CategoryList.jsx"
 import NewsSearch from "../NewsSearch/NewsSearch.jsx"
-import {useFetch} from "../../helpers/hooks/useFetch.js"
-import {getCategory} from "../../api/apiNews.js"
+import CategoriesFilter from "../Filter/CategoriesFilter.jsx"
+import RegionsFilter from "../Filter/RegionsFilter.jsx"
 
-const SideBar = ({ keywords, setKeywords, selectedCategory, setSelectedCategory }) => {
-  const {data: dataCategories} = useFetch(getCategory)
-
+const SideBar = ({ keywords, setKeywords, selectedCategory, setSelectedCategory, selectedRegion, setSelectedRegion }) => {
   return (
     <div className={styles.sidebar}>
       <NewsSearch keywords={keywords} setKeywords={setKeywords}/>
-      {dataCategories ? (
-        <CategoryList
-          categories={dataCategories.categories}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-      ) : null}
+      <CategoriesFilter
+        selectedCategory={selectedCategory}
+        setSelectedCategory={setSelectedCategory}
+      />
+      <RegionsFilter
+        selectedRegion={selectedRegion}
+        setSelectedRegion={setSelectedRegion}
+      />
     </div>
   )
 }
