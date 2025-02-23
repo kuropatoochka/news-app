@@ -1,10 +1,8 @@
-import Main from "./pages/Main/Main.jsx"
+import {Outlet} from "react-router-dom"
 
 function App() {
   return (
-    <>
-      <Main/>
-    </>
+    <Outlet />
   )
 }
 

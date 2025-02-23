@@ -1,0 +1,8 @@
+.card__publishing {
+    padding: 3px 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    color: #090B1A;
+    background-color: #fafafa;
+}

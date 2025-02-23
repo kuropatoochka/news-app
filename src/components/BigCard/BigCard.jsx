@@ -1,10 +1,16 @@
 import lightArrow from '../../assets/arrow_light.svg'
 import styles from './styles.module.css'
-import {formatPublishTime} from "../../helpers/formatPublishTime.js"
 import {useState} from "react"
+import {useNavigate} from "react-router-dom"
+import PublicationTime from "../../ui/PublicationTime/PublicationTime.jsx"
 
 const BigCard = ({ item, setSelectedCategory }) => {
   const [imageError, setImageError] = useState(false)
+  const navigate = useNavigate()
+
+  const handleNavigate = () => {
+    navigate(`/news/${item?.id}`, {state: { newsItem: item }})
+  }
 
   return (
     <article className={styles.card}>
@@ -14,12 +20,13 @@ const BigCard = ({ item, setSelectedCategory }) => {
           src={item.image}
           alt="news"
           onError={() => setImageError(true)}
+          onClick={handleNavigate}
         />
         : null}
       {!imageError && item.image !== "None" && <span className={styles.bubble_top}>{item.author}</span>}
       <h3 className={styles.card__title}>{item.title}</h3>
       <div className={styles.card__extra_info}>
-        <p className={styles.card__publishing}>{formatPublishTime(item.published)}</p>
+        <PublicationTime newsPublication={item.published}/>
         {item.category
           && item.category.map(category =>
             <button
@@ -33,7 +40,7 @@ const BigCard = ({ item, setSelectedCategory }) => {
         }
       </div>
       <span className={styles.bubble_bottom}>
-        <button className={styles.card__icon}>
+        <button className={styles.card__icon} onClick={handleNavigate}>
           <img className={styles.arrow} src={lightArrow} alt="arrow"/>
         </button>
       </span>
