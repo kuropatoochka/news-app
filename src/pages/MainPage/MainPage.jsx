@@ -6,7 +6,7 @@ import {PAGE_SIZE} from "../../constants/constants.js"
 import SideBar from "../../components/SideBar/SideBar.jsx"
 import NewsSection from "../../components/NewsSection/NewsSection.jsx"
 
-const Main = () => {
+const MainPage = () => {
   const {filters, changeFilter} = useFilters({
     page_number: 1,
     page_size: PAGE_SIZE,
@@ -39,4 +39,4 @@ const Main = () => {
 )
 }
 
-export default Main
+export default MainPage

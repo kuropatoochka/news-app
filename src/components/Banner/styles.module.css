@@ -3,17 +3,6 @@
     height: 500px;
     grid-column: span 2;
 }
-.date {
-    width: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 20px 20px 10px;
-    color: #fafafa;
-    background-color: var(--news-background-color);
-    transition: background-color 0.3s ease;
-    z-index: 1;
-}
 .bubble_top,
 .bubble_top:after,
 .bubble_top:before,
@@ -90,7 +79,7 @@
         height: 200px;
         grid-column: auto;
     }
-    .date, .bubble_bottom {
+    .bubble_bottom {
         display: none;
     }
     .bubble_top {

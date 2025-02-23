@@ -1,10 +1,10 @@
 import darkArrow from '../../assets/chevron_dark.svg'
 import styles from './styles.module.css'
 import withSkeleton from "../../helpers/hocs/withSkeleton.jsx"
-import LatestNewsItem from "../LatestNewsItem/LatestNewsItem.jsx"
+import BannerNewsItem from "../BannerNewsItem/BannerNewsItem.jsx"
 import {useEffect, useMemo, useRef, useState} from "react"
 
-const LatestNewsList = ({ news }) => {
+const BannerNewsList = ({ news }) => {
   const [offsetY, setOffsetY] = useState(0)
   const itemRef = useRef(null)
   const intervalRef = useRef(null)
@@ -30,7 +30,7 @@ const LatestNewsList = ({ news }) => {
   }, [])
 
   const renderListOfNews = useMemo(() =>
-    news.map(item => <LatestNewsItem key={item.id} item={item} itemRef={itemRef}/>),
+    news.map(item => <BannerNewsItem key={item.id} item={item} itemRef={itemRef}/>),
     [news]
   )
 
@@ -49,6 +49,6 @@ const LatestNewsList = ({ news }) => {
   )
 }
 
-const LatestNewsWithSkeleton = withSkeleton(LatestNewsList, 'banner', 1)
+const LatestNewsWithSkeleton = withSkeleton(BannerNewsList, 'banner', 1)
 
 export default LatestNewsWithSkeleton
