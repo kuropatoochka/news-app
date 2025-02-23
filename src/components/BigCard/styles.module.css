@@ -22,17 +22,9 @@
     flex-wrap: wrap;
     gap: 8px;
 }
-.card__publishing, .categories {
+.categories {
     padding: 3px 15px;
     border-radius: 20px;
-}
-.card__publishing {
-    display: flex;
-    align-items: center;
-    color: #090B1A;
-    background-color: #fafafa;
-}
-.categories {
     border: 2px solid #fafafa;
     font-size: 0.87em;
     line-height: 1.3;
@@ -123,7 +115,7 @@
 }
 
 @media (max-width: 770px) {
-    .categories, .bubble_top {
+    .categories {
         font-size: 0.625em;
     }
 }

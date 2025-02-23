@@ -1,0 +1,16 @@
+.homeButton {
+    position: absolute;
+    width: max-content;
+    padding: 11px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--news-active-color);
+    z-index: 1;
+}
+
+@media (max-width: 1000px) {
+    .homeIcon {
+        width: 16px;
+    }
+}

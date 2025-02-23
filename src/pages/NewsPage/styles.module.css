@@ -1,0 +1,123 @@
+.item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 340px;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+.banner {
+    position: relative;
+}
+.bubble_top,
+.bubble_top:after,
+.bubble_top:before,
+.bubble_bottom,
+.bubble_bottom:after,
+.bubble_bottom:before {
+    position: absolute;
+}
+.bubble_top {
+    width: 360px;
+    height: 48px;
+}
+.bubble_top, .bubble_bottom {
+    background-color: var(--news-main-color);
+    transition: background-color 0.3s ease;
+}
+.bubble_top {
+    top: 0;
+    left: 0;
+    padding-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    border-bottom-right-radius: 20px;
+}
+.bubble_top:after {
+    content: "";
+    width: 56px;
+    height: 28px;
+    top: 0;
+    right: -56px;
+    border-top-left-radius: 20px;
+    box-shadow: -20px 0 0 0 var(--news-main-color);
+}
+.bubble_top:before {
+    content: "";
+    width: 56px;
+    height: 28px;
+    bottom: -28px;
+    left: 0;
+    border-top-left-radius: 20px;
+    box-shadow: -20px 0 0 0 var(--news-main-color);
+}
+.bubble_bottom {
+    width: 56px;
+    height: 56px;
+    padding: 0 10px 10px;
+    top: 0;
+    right: 0;
+    border-bottom-left-radius: 20px;
+}
+.bubble_bottom:after {
+    content: "";
+    width: 56px;
+    height: 28px;
+    top: 0;
+    left: -56px;
+    border-top-right-radius: 20px;
+    box-shadow: 20px 0 0 0 var(--news-main-color);
+}
+.bubble_bottom:before {
+    content: "";
+    width: 28px;
+    height: 56px;
+    bottom: -56px;
+    right: 0;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -20px 0 0 var(--news-main-color);
+}
+.item__info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: var(--news-background-color);
+}
+.description {
+    flex-grow: 1;
+}
+.text {
+    margin-bottom: 15px;
+    color: #fafafa;
+}
+.item__extra_info {
+    display: flex;
+    gap: 8px;
+}
+.link {
+    padding: 3px 15px;
+    border-radius: 20px;
+    border: 2px solid #fafafa;
+    font-size: 0.87em;
+    line-height: 1.3;
+    color: #fafafa;
+    transition: all ease-out 0.3s;
+}
+.link:hover {
+    border: 2px solid var(--news-active-color);
+    color: var(--news-active-color);
+}
+
+@media (max-width: 1000px) {
+    .item {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+    .bubble_bottom {
+        width: 48px;
+        height: 48px;
+    }
+    .link {
+        font-size: 0.625em;
+    }
+}
