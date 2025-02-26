@@ -6,9 +6,15 @@
     border-radius: 20px;
     background-color: var(--news-background-color);
 }
-.image {
-    width: 100%;
+.card__image {
     height: 150px;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: var(--news-background-color);
+}
+.image {
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     border-radius: 20px;
 }

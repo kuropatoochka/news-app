@@ -26,7 +26,6 @@
 .arrowUp, .arrowDown {
     width: 20px;
 }
-
 @media (max-width: 770px) {
     .container {
         height: 200px;

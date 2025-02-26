@@ -1,20 +1,14 @@
-.wrapper {
+.search {
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     border-radius: 20px;
     background-color: var(--news-pagination-color);
 }
-.search_input {
+.input {
     flex-grow: 1;
     color: var(--news-secondary-color);
 }
 input::placeholder {
     color: var(--news-secondary-color);
-}
-
-@media (max-width: 770px) {
-    .search_input {
-        display: none;
-    }
 }

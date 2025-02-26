@@ -1,32 +1,32 @@
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .title {
     color: var(--news-secondary-color);
-    padding: 10px;
+    padding-left: 10px;
 }
-.filters {
-    max-height: 37vh;
-    overflow-y: scroll;
-    scrollbar-width: none;
-}
-.item, .active {
+.button {
     margin: 4px;
     padding: 5px 20px;
+    width: max-content;
     border-radius: 20px;
     font-size: 0.87em;
-    transition: all 0.3s ease;
-}
-.item {
     color: var(--news-secondary-color);
     background-color: var(--news-pagination-color);
+    transition: all 0.3s ease;
 }
-.active {
-    color: #fafafa;
-}
-.item:hover, .active {
+.button:hover {
     background-color: var(--news-active-color);
 }
 
 @media (max-width: 770px) {
-    .item, .active {
+    .title {
+        font-size: 0.87em;
+    }
+    .button {
         padding: 5px 15px;
+        font-size: 0.625em;
     }
 }
