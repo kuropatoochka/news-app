@@ -8,18 +8,18 @@ import PublicationTime from "../../ui/PublicationTime/PublicationTime.jsx"
 import FormattedDate from "../../ui/FormattedDate/FormattedDate.jsx"
 
 const NewsPage = () => {
-  const itemRef = useRef(null)
+  const bannerRef = useRef(null)
   const { state } = useLocation()
   const newsItem = state?.newsItem
 
-  if (!newsItem) return <p>News item not found</p>
+  if (!newsItem) return <p className={styles.text}>News item not found</p>
 
   const { id, description, published, url } = newsItem
 
   return (
     <div className={styles.item}>
-      <div className={styles.banner} ref={itemRef}>
-        <BannerNewsItem key={id} item={newsItem} itemRef={itemRef} />
+      <div className={styles.banner} ref={bannerRef}>
+        <BannerNewsItem key={id} item={newsItem} bannerRef={bannerRef} isNewsPage={true}/>
         <div className={styles.bubble_top}>
           <ThemeButton />
           <FormattedDate />
@@ -35,7 +35,7 @@ const NewsPage = () => {
         </div>
         <div className={styles.item__extra_info}>
           <PublicationTime newsPublication={published} />
-          <a className={styles.link} href={url}>Read more</a>
+          <a className={styles.link} href={url} target="_blank" rel="noopener noreferrer">Read more</a>
         </div>
       </div>
     </div>
