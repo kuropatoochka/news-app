@@ -1,13 +1,14 @@
 .pagination {
-    width: min-content;
     padding: 3px;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     border-radius: 25px;
     background-color: var(--news-pagination-color);
 }
 .list {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
 }
 .item {
@@ -32,4 +33,9 @@
 }
 .rightArrow {
     rotate: 90deg;
+}
+
+@media (max-width: 770px) {
+    .pagination {
+    }
 }

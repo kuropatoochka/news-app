@@ -11,6 +11,6 @@
 }
 @media (max-width: 770px) {
     .date {
-        display: none;
+        width: 180px;
     }
 }

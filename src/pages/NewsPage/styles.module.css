@@ -121,3 +121,8 @@
         font-size: 0.625em;
     }
 }
+@media (max-width: 770px) {
+    .bubble_top {
+        width: 260px;
+    }
+}

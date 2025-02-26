@@ -1,27 +1,24 @@
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-.button {
+.item, .active {
     margin: 4px;
     padding: 5px 20px;
-    width: max-content;
     border-radius: 20px;
     font-size: 0.87em;
-    color: var(--news-secondary-color);
-    background-color: var(--news-pagination-color);
     transition: all 0.3s ease;
 }
-.button:hover {
+.item {
+    width: max-content;
+    color: var(--news-secondary-color);
+    background-color: var(--news-pagination-color);
+}
+.active {
+    color: #fafafa;
+}
+.item:hover, .active {
     background-color: var(--news-active-color);
 }
 
 @media (max-width: 770px) {
-    .sidebar {
-        grid-row: 2;
-    }
-    .button {
+    .item, .active {
         padding: 5px 15px;
         font-size: 0.625em;
     }
